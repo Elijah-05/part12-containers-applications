@@ -1,0 +1,20 @@
+Script started on 2024-11-19 16:57:52+03:00 [TERM="xterm-256color" TTY="/dev/pts/4" COLUMNS="120" LINES="30"]
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+[?2004h]0;ubuntu@Ellay: /mnt/d/scriptStore[01;32mubuntu@Ellay[00m:[01;34m/mnt/d/scriptStore[00m$ echo "hello"
+[?2004lhello
+[?2004h]0;ubuntu@Ellay: /mnt/d/scriptStore[01;32mubuntu@Ellay[00m:[01;34m/mnt/d/scriptStore[00m$ echo "I have started the script record successfully"
+[?2004lI have started the script record successfully
+[?2004h]0;ubuntu@Ellay: /mnt/d/scriptStore[01;32mubuntu@Ellay[00m:[01;34m/mnt/d/scriptStore[00m$ ls
+[?2004l[0m[01;32mtypescript[0m
+[?2004h]0;ubuntu@Ellay: /mnt/d/scriptStore[01;32mubuntu@Ellay[00m:[01;34m/mnt/d/scriptStore[00m$ cd ..
+[?2004l[?2004h]0;ubuntu@Ellay: /mnt/d[01;32mubuntu@Ellay[00m:[01;34m/mnt/d[00m$ cd scriptStore/
+[?2004l[?2004h]0;ubuntu@Ellay: /mnt/d/scriptStore[01;32mubuntu@Ellay[00m:[01;34m/mnt/d/scriptStore[00m$ cat typescript 
+[?2004l[?2004h]0;ubuntu@Ellay: /mnt/d/scriptStore[01;32mubuntu@Ellay[00m:[01;34m/mnt/d/scriptStore[00m$ ls
+[?2004l[0m[01;32mtypescript[0m
+[?2004h]0;ubuntu@Ellay: /mnt/d/scriptStore[01;32mubuntu@Ellay[00m:[01;34m/mnt/d/scriptStore[00m$ cat typescript 
+[?2004l[?2004h]0;ubuntu@Ellay: /mnt/d/scriptStore[01;32mubuntu@Ellay[00m:[01;34m/mnt/d/scriptStore[00m$ exit
+[?2004lexit
+
+Script done on 2024-11-19 16:58:49+03:00 [COMMAND_EXIT_CODE="0"]
