@@ -48,8 +48,7 @@ singleRouter.get("/", async (req, res) => {
 singleRouter.put("/", async (req, res) => {
   if (req.todo) {
     try {
-      console.log("req.todo put: ", req.todo);
-      const updatedTodo = await Todo.findOneAndUpdate(
+      const updatedTodo = await Todo.findByIdAndUpdate(
         { _id: req.todo._id },
         req.body,
         {
@@ -57,7 +56,8 @@ singleRouter.put("/", async (req, res) => {
           includeResultMetadata: true,
         }
       );
-      res.status(200).json(updatedTodo);
+      console.log("updatedTodo: ", updatedTodo);
+      res.send(updatedTodo);
     } catch (error) {
       return res.sendStatus(500);
     }
