@@ -4,8 +4,12 @@ const router = express.Router();
 
 /* GET todos listing. */
 router.get("/", async (_, res) => {
-  const todos = await Todo.find({});
-  res.send(todos);
+  try {
+    const todos = await Todo.find({});
+    res.send(todos);
+  } catch (error) {
+    next(error); // Pass errors to Express error-handling middleware
+  }
 });
 
 /* POST todo to listing. */
@@ -21,9 +25,11 @@ const singleRouter = express.Router();
 
 const findByIdMiddleware = async (req, res, next) => {
   const { id } = req.params;
-  req.todo = await Todo.findById(id);
-  if (!req.todo) return res.sendStatus(404);
-
+  try {
+    req.todo = await Todo.findById(id);
+  } catch (error) {
+    return res.sendStatus(404);
+  }
   next();
 };
 
@@ -35,12 +41,29 @@ singleRouter.delete("/", async (req, res) => {
 
 /* GET todo. */
 singleRouter.get("/", async (req, res) => {
-  res.sendStatus(405); // Implement this
+  res.send(req.todo);
 });
 
 /* PUT todo. */
 singleRouter.put("/", async (req, res) => {
-  res.sendStatus(405); // Implement this
+  if (req.todo) {
+    try {
+      const updatedTodo = await Todo.findByIdAndUpdate(
+        { _id: req.todo._id },
+        req.body,
+        {
+          new: true,
+          includeResultMetadata: true,
+        }
+      );
+      console.log("updatedTodo: ", updatedTodo);
+      res.send(updatedTodo);
+    } catch (error) {
+      return res.sendStatus(500);
+    }
+  } else {
+    res.sendStatus(404);
+  }
 });
 
 router.use("/:id", findByIdMiddleware, singleRouter);
