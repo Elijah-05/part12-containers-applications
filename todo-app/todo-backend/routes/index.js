@@ -8,7 +8,6 @@ let visits = 0;
 /* GET index data. */
 router.get("/", async (req, res) => {
   visits++;
-  console.log("configs: ", configs);
   res.send({
     ...configs,
     visits,
