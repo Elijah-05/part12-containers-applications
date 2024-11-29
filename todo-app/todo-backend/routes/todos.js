@@ -62,7 +62,6 @@ singleRouter.put("/", async (req, res) => {
           includeResultMetadata: true,
         }
       );
-      console.log("updatedTodo: ", updatedTodo);
       res.send(updatedTodo);
     } catch (error) {
       return res.sendStatus(500);
