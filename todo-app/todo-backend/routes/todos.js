@@ -19,10 +19,10 @@ router.post("/", async (req, res) => {
     text: req.body.text,
     done: false,
   });
-  if(todo) {
-    const currentCount = parseInt(await getAsync('added_todos')) || 0;
+  if (todo) {
+    const currentCount = parseInt(await getAsync("added_todos")) || 0;
     const newCount = currentCount + 1;
-    await setAsync('added_todos', newCount);
+    await setAsync("added_todos", newCount);
   }
   res.send(todo);
 });

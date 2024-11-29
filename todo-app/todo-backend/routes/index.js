@@ -17,10 +17,12 @@ router.get("/", async (req, res) => {
 
 router.get("/statistics", async (req, res) => {
   try {
-    const todoCount = parseInt(await getAsync("added_todos"));
+    const todoCount = parseInt(await getAsync("added_todos")) || 0;
     console.log("added_todo_count: ", todoCount);
     res.send({ added_todos: todoCount });
-  } catch (error) {}
+  } catch (error) {
+    res.status(500).send({ error: "Internal Server Error" });
+  }
   res.end();
 });
 
