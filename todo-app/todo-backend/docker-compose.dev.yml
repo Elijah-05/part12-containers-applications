@@ -1,4 +1,16 @@
 services:
+  app:
+    image: todo-frontend
+    build:
+      context: .
+      dockerfile: dev.Dockerfile
+    volumes:
+      - ./:/user/src/app
+    ports:
+      - 3210:5173
+    container_name: frontend-development
+  debug-helper:
+    image: busybox
   mongo:
     image: mongo
     ports:
