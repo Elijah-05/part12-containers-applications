@@ -9,11 +9,11 @@ export default defineConfig({
     globals: true,
     setupFiles: "./vitest.setup.js",
   },
-  server: {
-    host: true,
-    port: 5173,
-    watch: {
-      usePolling: true,
-    },
-  },
+  // server: {
+  //   host: true,
+  //   port: 5173,
+  //   watch: {
+  //     usePolling: true,
+  //   },
+  // },
 });
